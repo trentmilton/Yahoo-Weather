@@ -1,6 +1,6 @@
 //
 //  YWHelper.m
-//  RainReminder
+//  Yahoo Weather
 //
 //  Created by Trent Milton on 4/12/11.
 //  Copyright (c) 2011 shaydes.dsgn. All rights reserved.
