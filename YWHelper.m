@@ -47,15 +47,23 @@
 
 #pragma mark - WOEID
 
-+ (int) getWOEID:(float)latitude longitude:(float)longitude yahooAPIKey:(NSString *)yahooAPIKey
++ (YWWOEID *) getWOEID:(float)latitude longitude:(float)longitude yahooAPIKey:(NSString *)yahooAPIKey
 {
     NSString *urlString = [NSString stringWithFormat:@"http://where.yahooapis.com/geocode?q=%f,%f&gflags=R&appid=%@", latitude, longitude, yahooAPIKey];
     NSURL *url = [NSURL URLWithString:urlString];
     TBXML *tbxml = [TBXML tbxmlWithURL:url];
     TBXMLElement *root = tbxml.rootXMLElement;
     TBXMLElement *resultElement = [TBXML childElementNamed:@"Result" parentElement:root];
+
+    YWWOEID *woeid = [[YWWOEID alloc] init];
+    
     TBXMLElement *woeidElement = [TBXML childElementNamed:@"woeid" parentElement:resultElement];
-    return [[TBXML textForElement:woeidElement] intValue];
+    woeid.woeid = [[TBXML textForElement:woeidElement] intValue];
+    
+    TBXMLElement *cityElement = [TBXML childElementNamed:@"city" parentElement:resultElement];
+    woeid.city = [TBXML textForElement:cityElement];
+
+    return woeid;
 }
 
 @end

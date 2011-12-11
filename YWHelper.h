@@ -8,10 +8,11 @@
 
 #import "TBXML.h"
 #import "YWForecast.h"
+#import "YWWOEID.h"
 
 @interface YWHelper : NSObject
 
-+ (int) getWOEID:(float)latitude longitude:(float)longitude yahooAPIKey:(NSString *)yahooAPIKey;
++ (YWWOEID *) getWOEID:(float)latitude longitude:(float)longitude yahooAPIKey:(NSString *)yahooAPIKey;
 + (NSArray *) getWeather:(int)woeid;
 
 @end
