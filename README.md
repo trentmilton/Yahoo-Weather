@@ -10,3 +10,5 @@ Allows access to the yahoo weather api
 NOTE: this source doesn't handle telling you the WOEIDs you will need to either know the latitude and longtitude for the place you want to search for.
 
 More info on WOEIDs can be found here: http://developer.yahoo.com/geo/geoplanet/guide/concepts.html
+
+Test on [RapidAPI](https://rapidapi.com/package/YahooWeatherAPI/functions?utm_source=YahooWeatherGitHub&utm_medium=button)
